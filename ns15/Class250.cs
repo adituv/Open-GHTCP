@@ -23,11 +23,11 @@ namespace ns15
 			this.string_1 = string_3;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			using (zzPakNode2 @class = new zzPakNode2())
 			{
-				@class.method_0("songs\\" + this.string_0 + ".mid.qb", this.class362_0.method_4(this.string_0));
+				@class.zzCreateQbFileFrom("songs\\" + this.string_0 + ".mid.qb", this.class362_0.method_4(this.string_0));
 				@class.method_16(this.string_1 + "songs\\" + this.string_0 + "_song.pak.xen");
 			}
 		}

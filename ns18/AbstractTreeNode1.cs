@@ -47,7 +47,7 @@ namespace ns18
 			return (AbstractBaseTreeNode1)base.Nodes[int_0];
 		}
 
-		public int method_3(AbstractBaseTreeNode1 class258_0)
+		public int addChild(AbstractBaseTreeNode1 class258_0)
 		{
 			return base.Nodes.Add(class258_0);
 		}
@@ -67,7 +67,7 @@ namespace ns18
 
 		public abstract void vmethod_14(Stream26 stream26_0);
 
-		public T method_5<T>(T gparam_0) where T : AbstractTreeNode1
+		public T zzFindNode<T>(T gparam_0) where T : AbstractTreeNode1
 		{
 			if (this.CompareTo(gparam_0) == 0)
 			{
@@ -83,7 +83,7 @@ namespace ns18
 					{
 						AbstractTreeNode1 @class = (AbstractTreeNode1)enumerator.Current;
 						T t;
-						if ((t = @class.method_5<T>(gparam_0)) != null)
+						if ((t = @class.zzFindNode<T>(gparam_0)) != null)
 						{
 							result = t;
 							return result;

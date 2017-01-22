@@ -18,7 +18,7 @@ namespace ns15
 			this.gh3Songlist_0 = gh3Songlist_1;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			zzGenericNode1 class308_ = this.class318_0.zzGetNode1("scripts\\guitar\\songlist.qb");
 			this.gh3Songlist_0.method_13(class308_);

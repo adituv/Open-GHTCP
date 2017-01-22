@@ -21,10 +21,10 @@ namespace ns17
 			this.bool_0 = bool_1;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			zzGenericNode1 @class = this.class318_0.zzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
-			@class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("custom_menu_setlist_switcher_progressions_" + (this.bool_0 ? "gha" : "gh3"))).method_8(this.gh3Songlist_0.method_7());
+			@class.zzFindNode<ArrayPointerRootNode>(new ArrayPointerRootNode("custom_menu_setlist_switcher_progressions_" + (this.bool_0 ? "gha" : "gh3"))).method_8(this.gh3Songlist_0.method_7());
 		}
 
 		public override string ToString()

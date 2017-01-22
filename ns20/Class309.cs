@@ -178,7 +178,7 @@ namespace ns20
 				if (treeNode is zzPakNode2 && (treeNode as zzPakNode2).class318_0 != null)
 				{
 					string string_ = this.imethod_9().Contains(".qb") ? this.imethod_9().Replace(".qb", ".qs") : (this.imethod_9() + ".qs");
-					if ((treeNode as zzPakNode2).class318_0.method_6(string_))
+					if ((treeNode as zzPakNode2).class318_0.zzQbFileExists(string_))
 					{
 						@class = new zzGenericNode1("TempFile", stream26_, (treeNode as zzPakNode2).class318_0.method_9(string_).dictionary_0);
 					}

@@ -28,15 +28,15 @@ namespace ns15
 			this.bool_0 = bool_1;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			string text;
 			zzGenericNode1 @class;
-			if (!this.class318_0.method_6(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
+			if (!this.class318_0.zzQbFileExists(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
 			{
-				this.class318_0.method_0(text, new zzGenericNode1());
+				this.class318_0.zzCreateQbFileFrom(text, new zzGenericNode1());
 				@class = this.class318_0.zzGetNode1(text);
-				@class.method_3(new IntegerRootNode("custom_setlist_bitmask", text, 0));
+				@class.addChild(new IntegerRootNode("custom_setlist_bitmask", text, 0));
 			}
 			else
 			{
@@ -44,15 +44,15 @@ namespace ns15
 			}
 			if (this.bool_0)
 			{
-				@class.method_3(new StructurePointerRootNode(this.int_0, text, this.gh3Songlist_0.dictionary_1[this.int_0].method_1()));
-				@class.method_3(new StructurePointerRootNode(this.gh3Songlist_0.method_10(this.int_0), text, this.gh3Songlist_0.method_11(this.int_0).method_6()));
+				@class.addChild(new StructurePointerRootNode(this.int_0, text, this.gh3Songlist_0.dictionary_1[this.int_0].method_1()));
+				@class.addChild(new StructurePointerRootNode(this.gh3Songlist_0.method_10(this.int_0), text, this.gh3Songlist_0.method_11(this.int_0).method_6()));
 			}
 			else
 			{
 				try
 				{
-					@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode(this.int_0)).Remove();
-					@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode(this.gh3Songlist_0.method_10(this.int_0))).Remove();
+					@class.zzFindNode<StructurePointerRootNode>(new StructurePointerRootNode(this.int_0)).Remove();
+					@class.zzFindNode<StructurePointerRootNode>(new StructurePointerRootNode(this.gh3Songlist_0.method_10(this.int_0))).Remove();
 				}
 				catch
 				{
@@ -62,7 +62,7 @@ namespace ns15
 				this.gh3Songlist_0.dictionary_1.Remove(this.int_0);
 				this.gh3Songlist_0.class214_0.Remove(this.gh3Songlist_0.class214_0.method_0(this.int_0));
 			}
-			@class.method_5<IntegerRootNode>(new IntegerRootNode("custom_setlist_bitmask")).method_8(this.gh3Songlist_0.CustomBitMask);
+			@class.zzFindNode<IntegerRootNode>(new IntegerRootNode("custom_setlist_bitmask")).method_8(this.gh3Songlist_0.CustomBitMask);
 		}
 
 		public override string ToString()

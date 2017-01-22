@@ -23,7 +23,7 @@ namespace ns17
 			this.bool_1 = bool_2;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			Console.WriteLine("-=- " + this.ToString() + " -=-");
 			zzGenericNode1 @class = this._pakNode.zzGetNode1("scripts\\guitar\\guitar_globaltags.qb");
@@ -57,7 +57,7 @@ namespace ns17
 			while (num < 5 && !this.QbDatabaseAlreadyEdited)
 			{
 				Console.WriteLine(array[num]);
-				UnicodeStructureNode class2 = @class.method_5<UnicodeStructureNode>(new UnicodeStructureNode("name" + (num + 1)));
+				UnicodeStructureNode class2 = @class.zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("name" + (num + 1)));
 				if (class2.method_8().Equals(this.bool_1 ? array3[num] : array2[num]))
 				{
 					class2.method_9(array[num]);
@@ -73,9 +73,9 @@ namespace ns17
 			{
 				zzGenericNode1 class3 = this._pakNode.zzGetNode1("scripts\\guitar\\guitar_memcard.qb");
 				Console.WriteLine("Changing Save File Size to 5MB.");
-				class3.method_5<IntegerStructureNode>(new IntegerStructureNode("fixed_size")).method_9(5242880);
+				class3.zzFindNode<IntegerStructureNode>(new IntegerStructureNode("fixed_size")).method_9(5242880);
 				Console.WriteLine("Changing Save Folder Name.");
-				class3.method_5<UnicodeRootNode>(new UnicodeRootNode("memcard_content_name")).method_8(string.Format("Progress{0}", (new string[]
+				class3.zzFindNode<UnicodeRootNode>(new UnicodeRootNode("memcard_content_name")).method_8(string.Format("Progress{0}", (new string[]
 				{
 					"A",
 					"B",
@@ -97,17 +97,17 @@ namespace ns17
 			{
 				zzGenericNode1 class4 = this._pakNode.zzGetNode1("scripts\\guitar\\menu\\menu_setlist.qb");
 				Console.WriteLine("Changing Setlist Scroller.");
-				zzQbScriptZipperClass.smethod_1(class4.method_5<ScriptRootNode>(new ScriptRootNode("setlist_scroll")));
+				zzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode<ScriptRootNode>(new ScriptRootNode("setlist_scroll")));
 				Console.WriteLine("Changing Tier Name Display.");
-				zzQbScriptZipperClass.smethod_1(class4.method_5<ScriptRootNode>(new ScriptRootNode("create_sl_assets")));
+				zzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode<ScriptRootNode>(new ScriptRootNode("create_sl_assets")));
 			}
 			if (!this.QbDatabaseAlreadyEdited)
 			{
 				zzGenericNode1 node = this._pakNode.zzGetNode1("scripts\\guitar\\guitar.qb");
-				node.method_5<StructurePointerNode>(new StructurePointerNode("load_z_soundcheck")).method_5<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Sound Check");
-				node.method_5<StructurePointerNode>(new StructurePointerNode("load_z_credits")).method_5<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Guitar Hero Tower");
-				node.method_5<StructurePointerNode>(new StructurePointerNode("viewer")).method_5<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Black Background");
-				node.method_5<StructurePointerNode>(new StructurePointerNode("load_z_viewer")).method_5<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Black Background");
+				node.zzFindNode<StructurePointerNode>(new StructurePointerNode("load_z_soundcheck")).zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Sound Check");
+				node.zzFindNode<StructurePointerNode>(new StructurePointerNode("load_z_credits")).zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Guitar Hero Tower");
+				node.zzFindNode<StructurePointerNode>(new StructurePointerNode("viewer")).zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Black Background");
+				node.zzFindNode<StructurePointerNode>(new StructurePointerNode("load_z_viewer")).zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("title")).method_9("Black Background");
 			}
 		}
 

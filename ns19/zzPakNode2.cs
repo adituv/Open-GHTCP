@@ -236,7 +236,7 @@ namespace ns19
 			return "";
 		}
 
-		public bool method_6(string string_2)
+		public bool zzQbFileExists(string string_2)
 		{
 			return this.method_10(string_2) != null;
 		}
@@ -418,7 +418,7 @@ namespace ns19
 				if (current2 is Class309 && (current2 as Class309).vmethod_8())
 				{
 					string string_ = current2.imethod_9().Replace(".qb", ".qs");
-					if (!this.class318_0.method_6(string_))
+					if (!this.class318_0.zzQbFileExists(string_))
 					{
 						if (!current2.imethod_18())
 						{

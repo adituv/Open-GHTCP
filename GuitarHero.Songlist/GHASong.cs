@@ -58,15 +58,15 @@ namespace GuitarHero.Songlist
 		{
 			base.vmethod_4(class302_0);
 			UnicodeStructureNode @class;
-			this.covered_by = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("covered_by"))) != null) ? @class.method_8() : "");
-			TagStructureNode class2;
-			this.band = (((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("band"))) != null) ? class2.method_8() : "default_band");
-			this.guitarist_checksum = ((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
+			this.covered_by = (((@class = class302_0.zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("covered_by"))) != null) ? @class.method_8() : "");
+			StructItemQbKey class2;
+			this.band = (((class2 = class302_0.zzFindNode<StructItemQbKey>(new StructItemQbKey("band"))) != null) ? class2.method_8() : "default_band");
+			this.guitarist_checksum = ((class2 = class302_0.zzFindNode<StructItemQbKey>(new StructItemQbKey("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
 			AsciiStructureNode class3;
-			this.singer_anim_pak = (((class3 = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("singer_anim_pak"))) != null) ? class3.method_8() : "");
+			this.singer_anim_pak = (((class3 = class302_0.zzFindNode<AsciiStructureNode>(new AsciiStructureNode("singer_anim_pak"))) != null) ? class3.method_8() : "");
 			IntegerStructureNode class4;
-			this.thin_fretbar_8note_params_high_bpm = (((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null) ? class4.method_8() : 0);
-			this.perry_mic_stand = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("perry_mic_stand"))) != null && class4.method_8() == 1);
+			this.thin_fretbar_8note_params_high_bpm = (((class4 = class302_0.zzFindNode<IntegerStructureNode>(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null) ? class4.method_8() : 0);
+			this.perry_mic_stand = ((class4 = class302_0.zzFindNode<IntegerStructureNode>(new IntegerStructureNode("perry_mic_stand"))) != null && class4.method_8() == 1);
 		}
 
 		public override StructurePointerNode vmethod_5()
@@ -75,24 +75,24 @@ namespace GuitarHero.Songlist
 			StructureHeaderNode class2 = @class.method_8();
 			if (!this.covered_by.Equals(""))
 			{
-				class2.method_3(new UnicodeStructureNode("covered_by", this.covered_by));
+				class2.addChild(new UnicodeStructureNode("covered_by", this.covered_by));
 			}
-			class2.method_3(new TagStructureNode("band", this.band));
+			class2.addChild(new StructItemQbKey("band", this.band));
 			if (this.guitarist_checksum)
 			{
-				class2.method_3(new TagStructureNode("guitarist_checksum", "aerosmith"));
+				class2.addChild(new StructItemQbKey("guitarist_checksum", "aerosmith"));
 			}
 			if (!this.singer_anim_pak.Equals(""))
 			{
-				class2.method_3(new AsciiStructureNode("singer_anim_pak", this.singer_anim_pak));
+				class2.addChild(new AsciiStructureNode("singer_anim_pak", this.singer_anim_pak));
 			}
 			if (this.thin_fretbar_8note_params_high_bpm != 0)
 			{
-				class2.method_3(new IntegerStructureNode("band_playback_volume", this.thin_fretbar_8note_params_high_bpm));
+				class2.addChild(new IntegerStructureNode("band_playback_volume", this.thin_fretbar_8note_params_high_bpm));
 			}
 			if (this.perry_mic_stand)
 			{
-				class2.method_3(new IntegerStructureNode("band_playback_volume", 1));
+				class2.addChild(new IntegerStructureNode("band_playback_volume", 1));
 			}
 			return @class;
 		}

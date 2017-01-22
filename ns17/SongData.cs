@@ -1431,7 +1431,7 @@ namespace ns17
 						string text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
 						using (zzPakNode2 @class = new zzPakNode2(fileName, false))
 						{
-							if (!@class.method_6("songs\\" + text2 + ".mid.qb"))
+							if (!@class.zzQbFileExists("songs\\" + text2 + ".mid.qb"))
 							{
 								throw new Exception("MID.QB song file not found.");
 							}

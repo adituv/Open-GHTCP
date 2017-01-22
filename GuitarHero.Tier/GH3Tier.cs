@@ -73,24 +73,24 @@ namespace GuitarHero.Tier
 		public void method_2(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
 		{
 			UnicodeStructureNode @class;
-			this.title = (((@class = class286_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
+			this.title = (((@class = class286_0.zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
 			AsciiStructureNode class2;
-			this.completion_movie = (((class2 = class286_0.method_5<AsciiStructureNode>(new AsciiStructureNode("completion_movie"))) != null) ? class2.method_8() : "");
+			this.completion_movie = (((class2 = class286_0.zzFindNode<AsciiStructureNode>(new AsciiStructureNode("completion_movie"))) != null) ? class2.method_8() : "");
 			IntegerStructureNode class3;
-			this.defaultunlocked = (((class3 = class286_0.method_5<IntegerStructureNode>(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
-			TagStructureNode class4;
-			this.level = (((class4 = class286_0.method_5<TagStructureNode>(new TagStructureNode("level"))) != null) ? class4.method_8() : "No Preset Stage");
-			this.setlist_icon = (((class4 = class286_0.method_5<TagStructureNode>(new TagStructureNode("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
-			this.encorep1 = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "encorep1")) != null);
-			this.encorep2 = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "encorep2")) != null);
-			this.aerosmith_encore_p1 = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "aerosmith_encore_p1")) != null);
-			this.boss = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "boss")) != null);
-			this.nocash = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "nocash")) != null);
-			this.unlockall = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "unlockall")) != null);
+			this.defaultunlocked = (((class3 = class286_0.zzFindNode<IntegerStructureNode>(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
+			StructItemQbKey class4;
+			this.level = (((class4 = class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey("level"))) != null) ? class4.method_8() : "No Preset Stage");
+			this.setlist_icon = (((class4 = class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
+			this.encorep1 = (class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey(0, "encorep1")) != null);
+			this.encorep2 = (class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey(0, "encorep2")) != null);
+			this.aerosmith_encore_p1 = (class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey(0, "aerosmith_encore_p1")) != null);
+			this.boss = (class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey(0, "boss")) != null);
+			this.nocash = (class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey(0, "nocash")) != null);
+			this.unlockall = (class286_0.zzFindNode<StructItemQbKey>(new StructItemQbKey(0, "unlockall")) != null);
 			ArrayPointerNode class5 = new ArrayPointerNode("songs");
-			if (class286_0.method_6<ArrayPointerNode>(ref class5) && !(class5.method_8() is FloatListNode))
+			if (class286_0.method_6<ArrayPointerNode>(ref class5) && !(class5.GetFirstChild() is FloatListNode))
 			{
-				foreach (string current in class5.method_8().method_8<string>())
+				foreach (string current in class5.GetFirstChild().method_8<string>())
 				{
 					if (gh3Songlist_0.ContainsKey(current))
 					{
@@ -107,10 +107,10 @@ namespace GuitarHero.Tier
 		public StructureHeaderNode method_3()
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new UnicodeStructureNode("title", this.title));
+			@class.addChild(new UnicodeStructureNode("title", this.title));
 			if (this.songs.Count == 0)
 			{
-				@class.method_3(new ArrayPointerNode("songs", new FloatListNode(true)));
+				@class.addChild(new ArrayPointerNode("songs", new FloatListNode(true)));
 			}
 			else
 			{
@@ -119,47 +119,47 @@ namespace GuitarHero.Tier
 				{
 					list.Add(QbSongClass1.smethod_9(current.name));
 				}
-				@class.method_3(new ArrayPointerNode("songs", new TagArray(list)));
+				@class.addChild(new ArrayPointerNode("songs", new TagArray(list)));
 			}
 			if (this.boss)
 			{
-				@class.method_3(new TagStructureNode(0, "boss"));
+				@class.addChild(new StructItemQbKey(0, "boss"));
 			}
 			if (this.encorep1)
 			{
-				@class.method_3(new TagStructureNode(0, "encorep1"));
+				@class.addChild(new StructItemQbKey(0, "encorep1"));
 			}
 			if (this.encorep2)
 			{
-				@class.method_3(new TagStructureNode(0, "encorep2"));
+				@class.addChild(new StructItemQbKey(0, "encorep2"));
 			}
 			if (this.aerosmith_encore_p1)
 			{
-				@class.method_3(new TagStructureNode(0, "aerosmith_encore_p1"));
+				@class.addChild(new StructItemQbKey(0, "aerosmith_encore_p1"));
 			}
 			if (this.level != null && this.level != "No Preset Stage")
 			{
-				@class.method_3(new TagStructureNode("level", this.level));
+				@class.addChild(new StructItemQbKey("level", this.level));
 			}
 			if (this.defaultunlocked != 0)
 			{
-				@class.method_3(new IntegerStructureNode("defaultunlocked", this.defaultunlocked));
+				@class.addChild(new IntegerStructureNode("defaultunlocked", this.defaultunlocked));
 			}
 			if (!this.completion_movie.Equals(""))
 			{
-				@class.method_3(new AsciiStructureNode("completion_movie", this.completion_movie));
+				@class.addChild(new AsciiStructureNode("completion_movie", this.completion_movie));
 			}
 			if (!this.setlist_icon.Equals("No Icon"))
 			{
-				@class.method_3(new TagStructureNode("setlist_icon", this.setlist_icon));
+				@class.addChild(new StructItemQbKey("setlist_icon", this.setlist_icon));
 			}
 			if (this.nocash)
 			{
-				@class.method_3(new TagStructureNode(0, "nocash"));
+				@class.addChild(new StructItemQbKey(0, "nocash"));
 			}
 			if (this.unlockall)
 			{
-				@class.method_3(new TagStructureNode(0, "unlockall"));
+				@class.addChild(new StructItemQbKey(0, "unlockall"));
 			}
 			return @class;
 		}

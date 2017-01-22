@@ -21,7 +21,7 @@ namespace ns18
 			{
 				base.Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
 			}
-			else if (this is TagStructureNode || this is FileTagStructureNode)
+			else if (this is StructItemQbKey || this is FileTagStructureNode)
 			{
 				base.Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
 			}

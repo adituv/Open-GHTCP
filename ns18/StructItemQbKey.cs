@@ -4,38 +4,38 @@ using System;
 
 namespace ns18
 {
-	public class TagStructureNode : zzUnkNode295
+	public class StructItemQbKey : zzUnkNode295
 	{
-		public TagStructureNode()
+		public StructItemQbKey()
 		{
 			this.vmethod_0();
 		}
 
-		public TagStructureNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public StructItemQbKey(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
-		public TagStructureNode(int int_1)
+		public StructItemQbKey(int int_1)
 		{
 			this.int_0 = int_1;
 			this.vmethod_0();
 		}
 
-		public TagStructureNode(int int_1, string string_0)
+		public StructItemQbKey(int int_1, string string_0)
 		{
 			this.int_0 = int_1;
 			base.Nodes.Add(new TagValueNode(string_0));
 			this.vmethod_0();
 		}
 
-		public TagStructureNode(string string_0, string string_1)
+		public StructItemQbKey(string string_0, string string_1)
 		{
 			this.int_0 = QbSongClass1.smethod_9(string_0);
 			base.Nodes.Add(new TagValueNode(string_1));
 			this.vmethod_0();
 		}
 
-		public TagStructureNode(string string_0, int int_1)
+		public StructItemQbKey(string string_0, int int_1)
 		{
 			this.int_0 = QbSongClass1.smethod_9(string_0);
 			base.Nodes.Add(new TagValueNode(int_1));

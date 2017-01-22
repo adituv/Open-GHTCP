@@ -850,7 +850,7 @@ namespace ns15
 						string str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
 						using (zzPakNode2 @class = new zzPakNode2(fileName, false))
 						{
-							if (!@class.method_6("songs\\" + str + ".mid.qb"))
+							if (!@class.zzQbFileExists("songs\\" + str + ".mid.qb"))
 							{
 								throw new Exception("MID.QB song file not found.");
 							}
@@ -1449,7 +1449,7 @@ namespace ns15
 			}
 			this.string_2 = (this.bool_0 ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
 			this.string_3 = (this.bool_0 ? "backupAero\\" : "backup\\");
-			zzQbScriptZipperClass.string_0 = (this.bool_0 ? "GHA" : "GH3");
+			zzEmbeddedResourceDB.string_0 = (this.bool_0 ? "GHA" : "GH3");
 			if (this.bool_0)
 			{
 				this.Text += " - Aerosmith";

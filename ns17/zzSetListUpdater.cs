@@ -24,10 +24,10 @@ namespace ns17
 			this.gh3Songlist_0 = gh3Songlist_1;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			zzGenericNode1 @class = this.class318_0.zzGetNode1(this.gh3Songlist_0.gh3SetlistList[this.int_0].method_2());
-			@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode(this.int_0)).method_8(this.gh3Songlist_0.gh3SetlistList[this.int_0].method_6());
+			@class.zzFindNode<StructurePointerRootNode>(new StructurePointerRootNode(this.int_0)).method_8(this.gh3Songlist_0.gh3SetlistList[this.int_0].method_6());
 		}
 
 		public override string ToString()

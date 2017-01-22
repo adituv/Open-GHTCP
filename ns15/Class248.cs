@@ -69,7 +69,7 @@ namespace ns15
 			this.bool_1 = (this.string_0.Length == 6);
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			if (this.class323_0 != null)
 			{

@@ -39,15 +39,15 @@ namespace ns17
 
 		public GameSettingsChecker(zzPakNode2 class318_0)
 		{
-			if (!class318_0.method_6(GameSettingsChecker._hashPath))
+			if (!class318_0.zzQbFileExists(GameSettingsChecker._hashPath))
 			{
 				return;
 			}
 			zzGenericNode1 @class = new zzGenericNode1(GameSettingsChecker._hashPath, KeyGenerator.smethod_8(class318_0.method_12(GameSettingsChecker._hashPath), "MaC39SubInfo1245"));
-			this.version = new Version(@class.method_5<UnicodeRootNode>(new UnicodeRootNode("version")).method_7());
-			float[] array = @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("date")).method_7().method_7<float>();
+			this.version = new Version(@class.zzFindNode<UnicodeRootNode>(new UnicodeRootNode("version")).method_7());
+			float[] array = @class.zzFindNode<ArrayPointerRootNode>(new ArrayPointerRootNode("date")).method_7().method_7<float>();
 			this.date = new DateTime((int)array[0], (int)array[1], (int)array[2]);
-			this.unkBuffer = @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
+			this.unkBuffer = @class.zzFindNode<ArrayPointerRootNode>(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
 			class318_0.method_7(GameSettingsChecker._hashPath);
 			using (Stream26 stream = class318_0.method_17())
 			{
@@ -72,20 +72,20 @@ namespace ns17
 
 		public static void SignHash(zzPakNode2 pakNode)
 		{
-			if (pakNode.method_6(GameSettingsChecker._hashPath))
+			if (pakNode.zzQbFileExists(GameSettingsChecker._hashPath))
 			{
 				pakNode.method_7(GameSettingsChecker._hashPath);
 			}
 			zzGenericNode1 @class = new zzGenericNode1();
-			@class.method_3(new UnicodeRootNode("version", GameSettingsChecker._hashPath, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
+			@class.addChild(new UnicodeRootNode("version", GameSettingsChecker._hashPath, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
 			using (Stream26 stream = pakNode.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new ArrayPointerRootNode("hash", GameSettingsChecker._hashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream._stream)))));
+				@class.addChild(new ArrayPointerRootNode("hash", GameSettingsChecker._hashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream._stream)))));
 			}
 			GC.Collect();
 			DateTime now = DateTime.Now;
-			@class.method_3(new ArrayPointerRootNode("date", GameSettingsChecker._hashPath, new FloatArrayNode(new float[]
+			@class.addChild(new ArrayPointerRootNode("date", GameSettingsChecker._hashPath, new FloatArrayNode(new float[]
 			{
 				(float)now.Year,
 				(float)now.Month,

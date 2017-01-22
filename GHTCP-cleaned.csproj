@@ -705,7 +705,7 @@
     <Compile Include="ns17\zzSetListUpdater.cs" />
     <Compile Include="ns17\UpdateSetlistSwitcher.cs" />
     <Compile Include="ns17\Main.cs" />
-    <Compile Include="ns17\zzQbScriptZipperClass.cs" />
+    <Compile Include="ns17\zzEmbeddedResourceDB.cs" />
     <Compile Include="ns17\TGHManager.cs" />
     <Compile Include="ns17\GameSettingsChecker.cs" />
     <Compile Include="ns17\CompilerClass376.cs" />
@@ -729,7 +729,7 @@
     <Compile Include="ns18\IntegerArrayNode.cs" />
     <Compile Include="ns18\zzUnkNode294.cs" />
     <Compile Include="ns18\zzUnkNode295.cs" />
-    <Compile Include="ns18\TagStructureNode.cs" />
+    <Compile Include="ns18\StructItemQbKey.cs" />
     <Compile Include="ns18\AbstractTreeNode2.cs" />
     <Compile Include="ns18\Enum34.cs" />
     <Compile Include="ns18\EventArgs1.cs" />

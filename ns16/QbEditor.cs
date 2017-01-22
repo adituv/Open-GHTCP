@@ -12,7 +12,7 @@ namespace ns16
 			bool result;
 			try
 			{
-				this.vmethod_0();
+				this.CreateCustomMenu();
 				return true;
 			}
 			catch (Exception ex)
@@ -23,7 +23,7 @@ namespace ns16
 			return result;
 		}
 
-		public abstract void vmethod_0();
+		public abstract void CreateCustomMenu();
 
 		public abstract override string ToString();
 

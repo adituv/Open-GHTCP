@@ -168,10 +168,10 @@ namespace GuitarHero.Songlist
 		{
 			foreach (StructureHeaderNode @class in class292_0.Nodes)
 			{
-				int num = @class.method_5<TagStructureNode>(new TagStructureNode("tag")).method_10();
+				int num = @class.zzFindNode<StructItemQbKey>(new StructItemQbKey("tag")).method_10();
 				if (this.dictionary_1.ContainsKey(num))
 				{
-					this.class214_0.Add(@class.method_5<UnicodeStructureNode>(new UnicodeStructureNode("text")).method_8(), num);
+					this.class214_0.Add(@class.zzFindNode<UnicodeStructureNode>(new UnicodeStructureNode("text")).method_8(), num);
 				}
 			}
 		}
@@ -181,9 +181,9 @@ namespace GuitarHero.Songlist
 			StructureArrayNode @class = new StructureArrayNode();
 			foreach (string current in this.class214_0.Keys)
 			{
-				@class.method_3(new StructureHeaderNode(new List<zzUnkNode294>
+				@class.addChild(new StructureHeaderNode(new List<zzUnkNode294>
 				{
-					new TagStructureNode("tag", this.class214_0[current]),
+					new StructItemQbKey("tag", this.class214_0[current]),
 					new UnicodeStructureNode("text", current)
 				}));
 			}
@@ -219,8 +219,8 @@ namespace GuitarHero.Songlist
 
 		public void findEditableSongs(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
-			StructureHeaderNode @class = class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7();
-			bool flag = class308_0.method_5<TagStructureNode>(new TagStructureNode("band")) != null;
+			StructureHeaderNode @class = class308_0.zzFindNode<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7();
+			bool flag = class308_0.zzFindNode<StructItemQbKey>(new StructItemQbKey("band")) != null;
 			base.Clear();
 			foreach (StructurePointerNode class2 in @class.Nodes)
 			{
@@ -243,8 +243,8 @@ namespace GuitarHero.Songlist
 				list.Add(QbSongClass1.smethod_9(current));
 				list2.Add(base[current].vmethod_5());
 			}
-			((TagArray)class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
-			class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
+			((TagArray)class308_0.zzFindNode<ArrayPointerRootNode>(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
+			class308_0.zzFindNode<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
 		}
 	}
 }

@@ -37,7 +37,7 @@ namespace ns19
 			return 28;
 		}
 
-		public AbsTreeNode1_1 method_8()
+		public AbsTreeNode1_1 GetFirstChild()
 		{
 			if (base.Nodes.Count != 0)
 			{

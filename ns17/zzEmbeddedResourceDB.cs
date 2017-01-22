@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace ns17
 {
-	public static class zzQbScriptZipperClass
+	public static class zzEmbeddedResourceDB
 	{
 		public static string string_0 = "GH3";
 
@@ -16,15 +16,15 @@ namespace ns17
 			return ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Concat(new object[]
 			{
 				"GHTCP.FileDB.QBS.",
-				zzQbScriptZipperClass.string_0,
+				zzEmbeddedResourceDB.string_0,
 				'.',
 				string_1
 			})), "MinimizedScript1f2g4h"), string_1 + ".qbs");
 		}
 
-		public static void smethod_1(ScriptRootNode class274_0)
+		public static void unpackQbScriptTo(ScriptRootNode class274_0)
 		{
-			class274_0.method_7().method_7(zzQbScriptZipperClass.smethod_0(QbSongClass1.smethod_5(class274_0.int_0)));
+			class274_0.method_7().method_7(zzEmbeddedResourceDB.smethod_0(QbSongClass1.smethod_5(class274_0.int_0)));
 		}
 
 		public static byte[] smethod_2(string string_1)
@@ -32,9 +32,9 @@ namespace ns17
 			return ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream("GHTCP.FileDB.QB." + string_1), "MinimizedQBFile4f4g9h"), string_1 + ".qb");
 		}
 
-		public static zzGenericNode1 smethod_3(string string_1)
+		public static zzGenericNode1 unpackQbFile(string string_1)
 		{
-			return new zzGenericNode1(string_1, zzQbScriptZipperClass.smethod_2(string_1));
+			return new zzGenericNode1(string_1, zzEmbeddedResourceDB.smethod_2(string_1));
 		}
 	}
 }

@@ -259,7 +259,7 @@ namespace ns20
 						}
 						if (num == 27)
 						{
-							return new TagStructureNode();
+							return new StructItemQbKey();
 						}
 						if (num == 53)
 						{
@@ -311,7 +311,7 @@ namespace ns20
 						}
 						if (num2 == 13)
 						{
-							return new TagStructureNode();
+							return new StructItemQbKey();
 						}
 						throw ex;
 					}

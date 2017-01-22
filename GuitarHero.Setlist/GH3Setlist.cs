@@ -59,15 +59,15 @@ namespace GuitarHero.Setlist
 		public void method_5(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
 		{
 			AsciiStructureNode @class;
-			this.prefix = (((@class = class286_0.method_5<AsciiStructureNode>(new AsciiStructureNode("prefix"))) != null) ? @class.method_8() : "general");
-			this.initial_movie = (((@class = class286_0.method_5<AsciiStructureNode>(new AsciiStructureNode("initial_movie"))) != null) ? @class.method_8() : "");
+			this.prefix = (((@class = class286_0.zzFindNode<AsciiStructureNode>(new AsciiStructureNode("prefix"))) != null) ? @class.method_8() : "general");
+			this.initial_movie = (((@class = class286_0.zzFindNode<AsciiStructureNode>(new AsciiStructureNode("initial_movie"))) != null) ? @class.method_8() : "");
 			IntegerStructureNode class2;
-			int num = ((class2 = class286_0.method_5<IntegerStructureNode>(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
+			int num = ((class2 = class286_0.zzFindNode<IntegerStructureNode>(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
 			try
 			{
 				for (int i = 1; i <= num; i++)
 				{
-					this.tiers.Add(new GH3Tier(class286_0.method_5<StructurePointerNode>(new StructurePointerNode("tier" + i)).method_8(), gh3Songlist_0));
+					this.tiers.Add(new GH3Tier(class286_0.zzFindNode<StructurePointerNode>(new StructurePointerNode("tier" + i)).method_8(), gh3Songlist_0));
 				}
 			}
 			catch
@@ -79,12 +79,12 @@ namespace GuitarHero.Setlist
 		public StructureHeaderNode method_6()
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new AsciiStructureNode("prefix", this.prefix));
-			@class.method_3(new IntegerStructureNode("num_tiers", this.tiers.Count));
-			@class.method_3(new AsciiStructureNode("initial_movie", this.initial_movie));
+			@class.addChild(new AsciiStructureNode("prefix", this.prefix));
+			@class.addChild(new IntegerStructureNode("num_tiers", this.tiers.Count));
+			@class.addChild(new AsciiStructureNode("initial_movie", this.initial_movie));
 			for (int i = 0; i < this.tiers.Count; i++)
 			{
-				@class.method_3(new StructurePointerNode("tier" + (i + 1), this.tiers[i].method_3()));
+				@class.addChild(new StructurePointerNode("tier" + (i + 1), this.tiers[i].method_3()));
 			}
 			return @class;
 		}

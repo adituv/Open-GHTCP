@@ -18,15 +18,15 @@ namespace ns15
 			this.class318_0 = class318_1;
 		}
 
-		public override void vmethod_0()
+		public override void CreateCustomMenu()
 		{
 			Console.WriteLine("-=- " + this.ToString() + " -=-");
 			zzGenericNode1 @class = this.class318_0.zzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
-			foreach (StructureHeaderNode current in @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
+			foreach (StructureHeaderNode current in @class.zzFindNode<ArrayPointerRootNode>(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
-				bool flag = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockall")) != null;
-				bool flag2 = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockalleverything")) != null;
-				IntegerArrayNode class2 = current.method_5<ArrayPointerNode>(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
+				bool flag = current.zzFindNode<StructItemQbKey>(new StructItemQbKey("name", "unlockall")) != null;
+				bool flag2 = current.zzFindNode<StructItemQbKey>(new StructItemQbKey("name", "unlockalleverything")) != null;
+				IntegerArrayNode class2 = current.zzFindNode<ArrayPointerNode>(new ArrayPointerNode("unlock_pattern")).GetFirstChild() as IntegerArrayNode;
 				if (class2.Nodes.Count == 1)
 				{
 					this.bool_0 = true;
